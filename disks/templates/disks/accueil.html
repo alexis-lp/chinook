@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block nav %}
+    <table class="tableau_albums">
+        {% for album in list_albums %}
+            <tr> <td class="item_album" > <a href="{% url 'Lire contenu album' id=album.id %}">{{ album.title }}</a></td></tr>
+
+        {% empty %}
+        <p> Aucun Album.</p>
+        {% endfor %}
+    </table>
+{% endblock %}
+

@@ -1,0 +1,28 @@
+{% extends "disks/accueil.html" %}
+{% block content %}
+    <h2>{{ album.title }}</h2>
+    <hr>
+    <b>Artiste:</b>
+    {{ album.artist }}
+    <br>
+    <b>Titres</b>
+    <table class="table_titres">
+        <tr>
+            <th>Nom</th>
+            <th>Compositeur</th>
+            <th>Durée</th>
+            <th>Prix Unitaire</th>
+        </tr>
+        {% for titre in titres_de_l_album %}
+            <tr>
+                <td>{{ titre.name }}</td>
+                <td>{{ titre.composer }}</td>
+                <td>{{ titre.milliseconds }} ms</td>
+                <td>{{ titre.unitPrice }} $</td>
+            </tr>
+
+        {% empty %}
+        <p> Aucun titre dans l'album.</p>
+        {% endfor %}
+    </table>
+{% endblock %}

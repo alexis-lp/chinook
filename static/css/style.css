@@ -1,0 +1,24 @@
+.en-tête {
+    color: black;
+    font-family: Arial;
+}
+
+.liste_album{
+    float: left;
+    width: 400px;
+}
+
+.tableau_albums {
+    width: 95%;
+}
+
+.tableau_albums .item_album {
+    border: 1px solid lightgrey;
+    border-collapse: collapse;
+    color: black;
+    font-size:110%;
+
+}
+ .item_album {
+    padding: 15px;
+}
