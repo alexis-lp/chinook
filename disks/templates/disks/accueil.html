@@ -5,7 +5,7 @@
         {% csrf_token %}
         <div class="input-group">
             <div class="custom-file">
-                {{ form }}
+                <input type="text" name="recherche" size="40" class="form-control"/>
             </div>
             <div class="input-group-append">
                 <input type="submit" value="Rechercher Album" class="btn btn-primary" />
