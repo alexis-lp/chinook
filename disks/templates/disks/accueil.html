@@ -1,4 +1,23 @@
 {% extends "base.html" %}
+
+{% block form %}
+    <form action="{% url "accueil" %}" method="POST" class="form-inline">
+        {% csrf_token %}
+        <div class="input-group">
+            <div class="custom-file">
+                {{ form }}
+            </div>
+            <div class="input-group-append">
+                <input type="submit" value="Rechercher Album" class="btn btn-primary" />
+            </div>
+        </div>
+
+
+    </form>
+{%  endblock %}
+
+
+
 {% block nav %}
     <table class="table table-hover table-bordered">
         {% for album in list_albums %}
@@ -7,7 +26,7 @@
             </tr>
 
         {% empty %}
-        <p> Aucun Album.</p>
+        <p> Aucun Album de la base de donnée ne contient "{{ album_recherche }}".</p>
         {% endfor %}
     </table>
 {% endblock %}
