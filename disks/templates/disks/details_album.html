@@ -6,23 +6,28 @@
     {{ album.artist }}
     <br>
     <b>Titres</b>
-    <table class="table_titres">
-        <tr>
-            <th>Nom</th>
-            <th>Compositeur</th>
-            <th>Durée</th>
-            <th>Prix Unitaire</th>
-        </tr>
-        {% for titre in titres_de_l_album %}
+    <table class="table table-bordered">
+        <thead class="thead-light">
             <tr>
-                <td>{{ titre.name }}</td>
-                <td>{{ titre.composer }}</td>
-                <td>{{ titre.milliseconds }} ms</td>
-                <td>{{ titre.unitPrice }} $</td>
+                <th>Nom</th>
+                <th>Compositeur</th>
+                <th>Durée</th>
+                <th>Prix Unitaire</th>
             </tr>
+        </thead>
+        <tbody>
+             {% for titre in titres_de_l_album %}
+                <tr>
+                     <td>{{ titre.name }}</td>
+                    <td>{{ titre.composer }}</td>
+                    <td>{{ titre.milliseconds }} ms</td>
+                    <td>{{ titre.unitPrice }} $</td>
+                </tr>
 
-        {% empty %}
-        <p> Aucun titre dans l'album.</p>
-        {% endfor %}
+
+            {% empty %}
+                <p> Aucun titre dans l'album.</p>
+            {% endfor %}
+        </tbody>
     </table>
 {% endblock %}

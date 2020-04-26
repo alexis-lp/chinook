@@ -1,9 +1,10 @@
 {% extends "base.html" %}
-
 {% block nav %}
-    <table class="tableau_albums">
+    <table class="table table-hover table-bordered">
         {% for album in list_albums %}
-            <tr> <td class="item_album" > <a href="{% url 'Lire contenu album' id=album.id %}">{{ album.title }}</a></td></tr>
+            <tr>
+                <td> <a href="{% url 'Lire contenu album' id=album.id %}">{{ album.title }}</a></td>
+            </tr>
 
         {% empty %}
         <p> Aucun Album.</p>
