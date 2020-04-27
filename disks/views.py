@@ -6,7 +6,7 @@ from .forms import SearchForm
 
 def home(request):
     form = SearchForm(request.POST or None)
-    album_recherche= "";
+    album_recherche = "";
     if form.is_valid():
         album_recherche = form.cleaned_data['recherche']
 
